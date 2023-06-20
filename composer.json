@@ -1,0 +1,69 @@
+{
+    "name": "coderaworks/laravel-query-filters",
+    "description": "Query filters package for Laravel",
+    "keywords": [
+        "query",
+        "filters",
+        "laravel"
+    ],
+    "license": "MIT",
+    "homepage": "https://laravel-query-filters.jakubpotocky.sk",
+    "support": {
+        "issues": "https://github.com/coderaworks/laravelqueryfilters/issues",
+        "source": "https://github.com/coderaworks/laravelqueryfilters"
+    },
+    "authors": [
+        {
+            "name": "Jakub Potocký"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0.0",
+        "spatie/laravel-package-tools": "^1.11.1"
+    },
+    "require-dev": {
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0.0",
+        "pestphp/pest": "^2.8.0",
+        "pestphp/pest-plugin-laravel": "^2.0.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^10.2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoderaWorks\\LaravelQueryFilters\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CoderaWorks\\LaravelQueryFilters\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "CoderaWorks\\LaravelQueryFilters\\LaravelQueryFiltersServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

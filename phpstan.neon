@@ -1,0 +1,10 @@
+parameters:
+    level: 9
+    paths:
+        - examples
+        - src
+        - publish
+    tmpDir: build/phpstan
+    checkOctaneCompatibility: true
+    checkModelProperties: true
+    checkMissingIterableValueType: false
