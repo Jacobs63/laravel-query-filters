@@ -8,7 +8,7 @@ The query filtering supports both the DB facade & the Eloquent query builder.
 ## Installation
 Install the package via composer, using the terminal:
 ```bash
-composer require jacobs63/laravel-query-filters
+composer require coderaworks/laravel-query-filters
 ```
 
 Additionally, you may publish the provided translations:
