@@ -1,10 +1,11 @@
 parameters:
     level: 9
     paths:
-        - examples
+        - examples/php
         - src
         - publish
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false

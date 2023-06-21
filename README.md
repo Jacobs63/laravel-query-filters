@@ -1,8 +1,8 @@
 # Laravel Query Filters
 
-This package offers convenient class-defined filters for your eloquent queries.
+This package offers convenient class-defined filters for your eloquent queries.  
 Each filter can be individually validated, allowing for complete control of your code base and avoiding exposing your
-database structure to the outside world.
+database structure to the outside world.  
 The query filtering supports both the DB facade & the Eloquent query builder.
 
 ## Installation
@@ -42,9 +42,9 @@ class ExampleFilter implements QueryFilterInterface
     }
 }
 ```
-The `pattern` returns a regex pattern that will be used to match the requested filters.
-The `valid` method returns whether the provided tag, value & data combination are correct for this filter.
-The `apply` method applies the filter to the query in any way you'd like.
+The `pattern` returns a regex pattern that will be used to match the requested filters.  
+The `valid` method returns whether the provided tag, value & data combination are correct for this filter.  
+The `apply` method applies the filter to the query in any way you'd like.  
 
 ### Registering a filter
 To register a filter, you simply register it the `QueryFiltersProcessor` in your ServiceProvider, e.g.:
@@ -97,8 +97,8 @@ class ExampleQueryFiltersRequest extends FormRequest
 }
 ```
 
-The form request must also either implement the `queryFiltersList` method or the `$queryFiltersList` property, which returns the tag of the listing we're about to process.
-You should also make sure you return the listing rules provided from the trait using the method `getQueryFiltersRules`. 
+The form request must also either implement the `queryFiltersList` method or the `$queryFiltersList` property, which returns the tag of the listing we're about to process.  
+You should also make sure you return the listing rules provided from the trait using the method `getQueryFiltersRules`.
 
 Then you could use the created & now validated request class in a controller:
 
@@ -128,5 +128,42 @@ class ExampleQueryFiltersController
 }
 ```
 
+## Payload
+You'll likely be pairing a Single Page Application such as Vue when using this package, so you'll want to implement a route for the list.
+The payload should contain the query filters in the following shape:
+```typescript
+type Payload = {
+    filters: [
+        {
+            tag: string
+            value?: any
+            data?: any
+        }
+
+    ]
+}
+```
+Json payload example:
+```json
+{
+  "filters": [
+    {
+      "tag": "example-filter",
+      "value": "example-value",
+      "data": {
+        "key": "value"
+      }
+    },
+    {
+      "tag": "example-filter-2",
+      "value": "example-value-2"
+    },
+    {
+      "tag": "example-filter-3"
+    }
+  ]
+}
+```
+
 ## Examples
-See the examples folder for some additional code examples on how to use this package.
+See the [examples](examples) folder for some additional code examples on how to use this package.

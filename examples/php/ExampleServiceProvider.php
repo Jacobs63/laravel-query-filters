@@ -5,6 +5,7 @@ namespace CoderaWorks\LaravelQueryFilters\Examples;
 use CoderaWorks\LaravelqueryFilters\Examples\Filter\ExampleFallbackFilter;
 use CoderaWorks\LaravelqueryFilters\Examples\Filter\ExampleFilter;
 use CoderaWorks\LaravelqueryFilters\Examples\Filter\ExampleFilterWithOperator;
+use CoderaWorks\LaravelqueryFilters\Examples\Filter\ExampleMultipleMatchesFilter;
 use CoderaWorks\LaravelQueryFilters\QueryFiltersProcessor;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,6 +21,8 @@ class ExampleServiceProvider extends ServiceProvider
                     [
                         ExampleFilter::class,
                         ExampleFilterWithOperator::class,
+                        ExampleMultipleMatchesFilter::class,
+
                         ExampleFallbackFilter::class,
                     ],
                 );
